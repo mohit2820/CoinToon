@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/charts_bg">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Charts"
+        android:textColor="@color/black"
+        android:fontFamily="@font/bottomsheet_head"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Single CardView containing all summary items -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Total Income Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/money"
+                    app:tint="@color/money_sack" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Income"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/subtitle"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:id="@+id/totalIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹90,000"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Total Expenses Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/expenses"
+                    android:src="@drawable/book" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/subtitle"
+                    android:textStyle="bold"
+                    android:text="Total Expenses"
+                    android:textSize="16sp"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:id="@+id/totalExpenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹50,000"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Net Savings Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:tint="@color/balance_icon"
+                    android:src="@drawable/balance" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Net Savings"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/subtitle"
+                    android:textStyle="bold"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:id="@+id/netSavings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹40,000"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Chart Type Toggle Buttons -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/chartToggleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:singleSelection="true"
+        app:checkedButton="@id/pieChartButton">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pieChartButton"
+            android:layout_width="0dp"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@drawable/btn_text_selector"
+            android:backgroundTint="@drawable/toggle_button_background_selector"
+            android:text="Pie Chart"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/barChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:textColor="@drawable/btn_text_selector"
+            android:backgroundTint="@drawable/toggle_button_background_selector"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bar Chart"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/btn_text_selector"
+            android:backgroundTint="@drawable/toggle_button_background_selector"
+            android:layout_weight="1"
+            android:text="Line Chart"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="visible" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone" />
+
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#fffdf7</color>
+    <color name="text_heading">#404151</color>
+    <color name="subtitle">#4d4e5e</color>
+    <color name="total_income">#73bd8c</color>
+    <color name="total_expense">#ef7d6e</color>
+    <color name="balance">#3ea39c</color>
+    <color name="floating">#fec543</color>
+    <color name="money_sack">#28432b</color>
+    <color name="expenses">#543336</color>
+    <color name="balance_icon">#114b49</color>
+    <color name="button_border">#31B2E6</color>
+    <color name="button_text_color">#3461a2</color>
+    <color name="button_toggle">#2c5dc0</color>
+    <color name="button_toggle_2">#fffffe</color>
+    <color name="subtitle_text">#eef5f7</color>
+    <color name="splash">#f4fef8</color>
+    <color name="history_bg">#071d20</color>
+    <color name="amount">#fb3b2c</color>
+    <color name="searchBar">#17292b</color>
+    <color name="charts_bg">#fecdab</color>
+    <color name="signUpScreen">#fff9e7</color>
+    <color name="hintColor">#c6cccc</color>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GradientButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/gradient_button</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+
+
+</resources>

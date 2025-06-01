@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <!-- Add Transaction Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Transaction"
+            android:textSize="20sp"
+            android:fontFamily="@font/bottomsheet_head"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Expense/Income Toggle -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleTransactionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:singleSelection="true"
+            app:checkedButton="@id/btnExpense">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExpense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Expense"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIncome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:text="Income"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Amount -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amount (₹)"
+            android:textColor="@color/black"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="e.g. 1500"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Select date"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/right_arrow"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="@color/black"
+                android:cursorVisible="false"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Category -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/categoryToggleGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:singleSelection="true"
+            app:checkedButton="@id/chipFood"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipFood"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Food"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipBills"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Bills"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipOther"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Other"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Payment Method -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Payment Method"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/paymentToggleGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:singleSelection="true"
+            app:checkedButton="@id/chipUPI"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipUPI"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:layout_marginEnd="8dp"
+                android:text="UPI"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipCash"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:text="Cash"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipOther2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/subtitle"
+                android:textStyle="bold"
+                android:textColor="@drawable/btn_text_selector"
+                android:backgroundTint="@drawable/toggle_button_background_selector"
+                android:text="Other"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+        <!-- Notes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notes (Optional)"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="e.g. Dinner with friends"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNotes"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Done Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/subtitle"
+            android:textStyle="bold"
+            android:backgroundTint="@color/button_toggle"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    </LinearLayout>
+</ScrollView>

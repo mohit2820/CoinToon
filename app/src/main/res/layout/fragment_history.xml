@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/history_bg">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvHistoryTitle"
+        android:text="History"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:fontFamily="@font/bottomsheet_head"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+    <!-- Search Bar -->
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:hint="Search"
+        android:backgroundTint="@color/searchBar"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SearchBar"/>
+
+    <!-- Container for both RecyclerView and Empty State -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- RecyclerView - Initially visible -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransactionHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp"
+            android:clipToPadding="false"/>
+
+        <!-- Empty State - Initially gone -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="187dp"
+                android:layout_height="141dp"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="Wallet icon"
+                android:src="@drawable/wallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No transactions yet"
+                android:fontFamily="@font/bottomsheet_head"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/openBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap + to add one"
+                android:textSize="14sp"
+                android:fontFamily="@font/subtitle"
+                android:textColor="@color/subtitle_text"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

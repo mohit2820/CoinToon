@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="12dp">
+
+
+    <!-- Transaction Item -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp">
+
+        <!-- Icon (replace with your actual icon) -->
+        <ImageView
+            android:id="@+id/transactionIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/food"
+            android:scaleType="fitXY"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Transaction Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/transactionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/subtitle"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/transactionDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="May 27,2025"
+                android:textColor="@color/subtitle_text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Amount -->
+        <TextView
+            android:id="@+id/transactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹200"
+            android:textColor="@color/amount"
+            android:textStyle="bold"
+            android:fontFamily="@font/subtitle"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>

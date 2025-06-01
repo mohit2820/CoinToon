@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "765301272876",
+    "project_id": "cointoon-6016b",
+    "storage_bucket": "cointoon-6016b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765301272876:android:8c112f63a3a1c5894fbc89",
+        "android_client_info": {
+          "package_name": "com.example.cointoon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrauM-pXC6VJ8vFSyIvAyJFAWRC5QjJvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
